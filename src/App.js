@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./components/Header"
 import Formulario from "./components/Formulario"
-
-
+import Resumen from "./components/Resumen"
+import Resultado from "./components/Resultado"
 import styled from "@emotion/styled"
 
 const Contendor = styled.div`
@@ -18,8 +18,21 @@ const ContendorFormulario = styled.div`
 `; 
 
 
-
 function App() {
+  const[resumen, guardarResumen] = useState({
+    cotizacion : 0,
+    datos: {
+      marca: "",
+      year: "",
+      plan: ""
+
+    }
+  });
+
+  // Extraer Datos
+  const {cotizacion, datos} = resumen;
+
+
   return (
     <Contendor>
       <Header 
@@ -27,7 +40,17 @@ function App() {
       />
 
       <ContendorFormulario>
-        <Formulario />
+        <Formulario 
+          guardarResumen = {guardarResumen}
+        />
+
+        <Resumen 
+          datos= { datos}
+        />
+
+        <Resultado
+          cotizacion={cotizacion}
+        />
       </ContendorFormulario>
 
     </Contendor>
