@@ -3,7 +3,10 @@ import Header from "./components/Header"
 import Formulario from "./components/Formulario"
 import Resumen from "./components/Resumen"
 import Resultado from "./components/Resultado"
+<<<<<<< HEAD
 
+=======
+>>>>>>> d56340cc8a9341b111e346d2686349e0d35c3b1e
 import styled from "@emotion/styled"
 
 const Contendor = styled.div`
